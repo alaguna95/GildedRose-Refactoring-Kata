@@ -18,7 +18,6 @@ class GildedRoseTest {
 
         assertEquals(itemExpected, item);
     }
-
     @Test
     void update_normal_item_when_sell_days_have_passed(){
         Item itemExpected = new ItemBuilder().withName("Normal").withSellIn(-3).withQuality(10).build();
@@ -39,7 +38,6 @@ class GildedRoseTest {
 
         assertEquals(itemExpected, item);
     }
-
     @Test
     void update_normal_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_one(){
         Item itemExpected = new ItemBuilder().withName("Normal").withSellIn(-3).withQuality(0).build();
@@ -215,6 +213,86 @@ class GildedRoseTest {
     void update_backstage_passes_item_when_expiration_days_are_negative(){
         Item itemExpected = new ItemBuilder().withName("Backstage passes to a TAFKAL80ETC concert").withSellIn(-1).withQuality(0).build();
         Item item = new ItemBuilder().withName("Backstage passes to a TAFKAL80ETC concert").withSellIn(0).withQuality(31).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_conjured_item(){
+        Item itemExpected = new ItemBuilder().withName("Conjured").withSellIn(1).withQuality(20).build();
+        Item item = new ItemBuilder().withName("Conjured").withSellIn(2).withQuality(22).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_conjured_item_when_sell_days_have_passed(){
+        Item itemExpected = new ItemBuilder().withName("Conjured").withSellIn(-3).withQuality(8).build();
+        Item item = new ItemBuilder().withName("Conjured").withSellIn(-2).withQuality(12).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_conjured_item_when_quality_has_the_min_quality_value(){
+        Item itemExpected = new ItemBuilder().withName("Conjured").withSellIn(-3).withQuality(0).build();
+        Item item = new ItemBuilder().withName("Conjured").withSellIn(-2).withQuality(0).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_conjured_item_when_quality_has_the_min_quality_value_plus_one(){
+        Item itemExpected = new ItemBuilder().withName("Conjured").withSellIn(-3).withQuality(0).build();
+        Item item = new ItemBuilder().withName("Conjured").withSellIn(-2).withQuality(1).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_conjured_item_when_sell_days_have_passed_and_has_the_min_quality_value(){
+        Item itemExpected = new ItemBuilder().withName("Conjured").withSellIn(-3).withQuality(0).build();
+        Item item = new ItemBuilder().withName("Conjured").withSellIn(-2).withQuality(1).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_conjured_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_one(){
+        Item itemExpected = new ItemBuilder().withName("Conjured").withSellIn(-3).withQuality(0).build();
+        Item item = new ItemBuilder().withName("Conjured").withSellIn(-2).withQuality(1).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_conjured_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_two(){
+        Item itemExpected = new ItemBuilder().withName("Conjured").withSellIn(-3).withQuality(0).build();
+        Item item = new ItemBuilder().withName("Conjured").withSellIn(-2).withQuality(2).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_conjured_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_three(){
+        Item itemExpected = new ItemBuilder().withName("Conjured").withSellIn(-3).withQuality(0).build();
+        Item item = new ItemBuilder().withName("Conjured").withSellIn(-2).withQuality(3).build();
         GildedRose gildedRose = new GildedRose(new Item[]{item});
 
         gildedRose.updateQuality();
