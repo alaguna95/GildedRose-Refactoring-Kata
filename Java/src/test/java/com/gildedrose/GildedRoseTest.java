@@ -39,6 +39,16 @@ class GildedRoseTest {
         assertEquals(itemExpected, item);
     }
     @Test
+    void update_normal_item_when_sell_days_have_passed_and_has_the_min_quality_value(){
+        Item itemExpected = new ItemBuilder().withName("Normal").withSellIn(-3).withQuality(0).build();
+        Item item = new ItemBuilder().withName("Normal").withSellIn(-2).withQuality(0).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
     void update_normal_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_one(){
         Item itemExpected = new ItemBuilder().withName("Normal").withSellIn(-3).withQuality(0).build();
         Item item = new ItemBuilder().withName("Normal").withSellIn(-2).withQuality(1).build();
@@ -73,6 +83,16 @@ class GildedRoseTest {
     void update_aged_brie_item_when_quality_has_max_quality_value(){
         Item itemExpected = new ItemBuilder().withName("Aged Brie").withSellIn(1).withQuality(50).build();
         Item item = new ItemBuilder().withName("Aged Brie").withSellIn(2).withQuality(50).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(itemExpected, item);
+    }
+    @Test
+    void update_aged_brie_item_when_sell_days_have_passed_and_has_max_quality_value(){
+        Item itemExpected = new ItemBuilder().withName("Aged Brie").withSellIn(-3).withQuality(50).build();
+        Item item = new ItemBuilder().withName("Aged Brie").withSellIn(-2).withQuality(50).build();
         GildedRose gildedRose = new GildedRose(new Item[]{item});
 
         gildedRose.updateQuality();
