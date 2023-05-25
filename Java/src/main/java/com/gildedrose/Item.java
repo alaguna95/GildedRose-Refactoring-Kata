@@ -18,4 +18,14 @@ public class Item {
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == null)
+            return false;
+        if (!(object instanceof Item))
+            return false;
+        Item item = (Item)object;
+        return name.equals(item.name) && sellIn == item.sellIn && quality == item.quality;
+    }
 }
