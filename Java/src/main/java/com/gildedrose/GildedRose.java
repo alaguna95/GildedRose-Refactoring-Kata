@@ -14,6 +14,11 @@ class GildedRose {
     private static final int MAX_QUALITY_VALUE = 50;
     private static final int MIN_QUALITY_VALUE = 0;
 
+    private static final int SELL_IN_LIMIT_DAYS_MIN = 0;
+    private static final int SELL_IN_LIMIT_DAYS_MEDIUM = 5;
+    private static final int SELL_IN_LIMIT_DAYS_MAX = 10;
+
+
     public void updateQuality() {
         for (Item item : items) {
             switch (item.name) {
@@ -38,7 +43,7 @@ class GildedRose {
     private void updateAgedBrieItem(Item item){
         item.sellIn = item.sellIn-1;
 
-        if(item.sellIn >= 0){
+        if(item.sellIn >= SELL_IN_LIMIT_DAYS_MIN){
             item.quality = item.quality + 1;
         }else {
             item.quality = item.quality + 2;
@@ -51,11 +56,11 @@ class GildedRose {
     private void updateBackstagePassesItem(Item item){
         item.sellIn = item.sellIn-1;
 
-        if(item.sellIn >= 10){
+        if(item.sellIn >= SELL_IN_LIMIT_DAYS_MAX){
             item.quality = item.quality + 1;
-        }else if(item.sellIn >= 5){
+        }else if(item.sellIn >= SELL_IN_LIMIT_DAYS_MEDIUM){
             item.quality = item.quality + 2;
-        }else if(item.sellIn >= 0){
+        }else if(item.sellIn >= SELL_IN_LIMIT_DAYS_MIN){
             item.quality = item.quality + 3;
         }else{
             item.quality = 0;
@@ -68,7 +73,7 @@ class GildedRose {
     private void updateNormalItem(Item item){
         item.sellIn = item.sellIn-1;
 
-        if(item.sellIn >= 0){
+        if(item.sellIn >= SELL_IN_LIMIT_DAYS_MIN){
             item.quality = item.quality - 1;
         }else {
             item.quality = item.quality - 2;
@@ -80,7 +85,7 @@ class GildedRose {
     private void updateConjuredItem(Item item){
         item.sellIn = item.sellIn-1;
 
-        if(item.sellIn >= 0){
+        if(item.sellIn >= SELL_IN_LIMIT_DAYS_MIN){
             item.quality = item.quality - 2;
         }else {
             item.quality = item.quality - 4;
