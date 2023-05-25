@@ -80,7 +80,7 @@ class GildedRoseTest {
         assertEquals(itemExpected, item);
     }
     @Test
-    void update_aged_brie_item_when_quality_has_max_quality_value(){
+    void update_aged_brie_item_when_has_max_quality_value(){
         Item itemExpected = new ItemBuilder().withName("Aged Brie").withSellIn(1).withQuality(50).build();
         Item item = new ItemBuilder().withName("Aged Brie").withSellIn(2).withQuality(50).build();
         GildedRose gildedRose = new GildedRose(new Item[]{item});
