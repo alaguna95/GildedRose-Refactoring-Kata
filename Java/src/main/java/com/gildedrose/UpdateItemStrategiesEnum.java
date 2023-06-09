@@ -17,7 +17,7 @@ public enum UpdateItemStrategiesEnum {
         return updateItemStrategy;
     }
 
-    public static UpdateItemStrategy getUpdateItemStrategyByItemName(String itemType){
+    public static UpdateItemStrategy getUpdateItemStrategyByItemType(String itemType){
         UpdateItemStrategiesEnum updateItemStrategyEnum = UpdateItemStrategiesEnum.getUpdateItemStrategiesEnumByItemType(itemType);
         return updateItemStrategyEnum==null ? new UpdateNormalItemStrategy() : updateItemStrategyEnum.getUpdateItemStrategy();
     }

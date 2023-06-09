@@ -9,7 +9,7 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            UpdateItemStrategiesEnum.getUpdateItemStrategyByItemName(item.name).update(item);
+            UpdateItemStrategiesEnum.getUpdateItemStrategyByItemType(item.name).update(item);
         }
     }
 }
