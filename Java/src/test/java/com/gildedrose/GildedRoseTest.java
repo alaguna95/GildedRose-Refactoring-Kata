@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_normal_item_when_sell_days_have_passed(){
@@ -26,7 +26,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_normal_item_when_quality_has_the_min_quality_value(){
@@ -36,7 +36,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_normal_item_when_sell_days_have_passed_and_has_the_min_quality_value(){
@@ -46,7 +46,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_normal_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_one(){
@@ -56,7 +56,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
 
     @Test
@@ -67,7 +67,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_aged_brie_item_when_sell_days_have_passed(){
@@ -77,7 +77,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_aged_brie_item_when_has_max_quality_value(){
@@ -87,7 +87,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_aged_brie_item_when_sell_days_have_passed_and_has_max_quality_value(){
@@ -97,7 +97,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_aged_brie_item_when_sell_days_have_passed_and_has_max_quality_value_minus_one(){
@@ -107,7 +107,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_sulfuras_item(){
@@ -117,7 +117,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_higher_10(){
@@ -127,7 +127,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_higher_10_and_has_max_quality_value(){
@@ -137,7 +137,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_10(){
@@ -147,7 +147,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_10_and_has_max_quality_value(){
@@ -157,7 +157,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_10_and_has_max_quality_value_minus_one(){
@@ -167,7 +167,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_higher_5(){
@@ -177,7 +177,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
    @Test
     void update_backstage_passes_item_when_expiration_days_are_5(){
@@ -187,7 +187,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+       assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_5_and_has_max_quality_value(){
@@ -197,7 +197,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_5_and_has_max_quality_value_minus_one(){
@@ -207,7 +207,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_5_and_has_max_quality_value_minus_two(){
@@ -217,7 +217,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_higher_0(){
@@ -227,7 +227,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_backstage_passes_item_when_expiration_days_are_negative(){
@@ -237,7 +237,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_conjured_item(){
@@ -247,7 +247,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_conjured_item_when_sell_days_have_passed(){
@@ -257,7 +257,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_conjured_item_when_quality_has_the_min_quality_value(){
@@ -267,7 +267,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_conjured_item_when_quality_has_the_min_quality_value_plus_one(){
@@ -277,7 +277,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_conjured_item_when_sell_days_have_passed_and_has_the_min_quality_value(){
@@ -287,7 +287,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_conjured_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_one(){
@@ -297,7 +297,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_conjured_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_two(){
@@ -307,7 +307,7 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
     @Test
     void update_conjured_item_when_sell_days_have_passed_and_has_the_min_quality_value_plus_three(){
@@ -317,6 +317,6 @@ class GildedRoseTest {
 
         gildedRose.updateQuality();
 
-        assertEquals(itemExpected, item);
+        assertThat(item).usingRecursiveComparison().isEqualTo(itemExpected);
     }
 }
